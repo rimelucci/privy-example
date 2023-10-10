@@ -1,7 +1,7 @@
-import {useRouter} from 'next/router';
-import React, {useEffect} from 'react';
-import {usePrivy} from '@privy-io/react-auth';
-import Head from 'next/head';
+import { useRouter } from "next/router";
+import React, { useEffect } from "react";
+import { usePrivy } from "@privy-io/react-auth";
+import Head from "next/head";
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -26,7 +26,7 @@ export default function DashboardPage() {
 
   useEffect(() => {
     if (ready && !authenticated) {
-      router.push('/');
+      router.push("/");
     }
   }, [ready, authenticated, router]);
 
@@ -179,7 +179,9 @@ export default function DashboardPage() {
               )}
             </div>
 
-            <p className="mt-6 font-bold uppercase text-sm text-gray-600">User object</p>
+            <p className="mt-6 font-bold uppercase text-sm text-gray-600">
+              User object
+            </p>
             <textarea
               value={JSON.stringify(user, null, 2)}
               className="max-w-4xl bg-slate-700 text-slate-50 font-mono p-4 text-xs sm:text-sm rounded-md mt-2"
